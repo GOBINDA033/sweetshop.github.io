@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SweetShop - Modern Sweets & Bakery</title>
+<style>
+/* Reset & Basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+background: #43C6AC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #020024;
+background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+header p {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #ff2e63;
+  font-weight: bold;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #08d9d6;
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  height: 300px;
+  background: url('images2/bg4.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+  animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/* Products Section */
+.products {
+  padding: 50px 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+.products h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ff2e63;
+  font-size: 32px;
+  position: relative;
+}
+.products h2::after {
+  content: '';
+  width: 100px;
+  height: 3px;
+  background: #08d9d6;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 30px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.product-info {
+  padding: 15px;
+  text-align: center;
+}
+.product-info h3 {
+  color: #ff2e63;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.product-info p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+}
+.product-info button {
+  background: #08d9d6;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.product-info button:hover {
+  background: #ff2e63;
+  transform: scale(1.1);
+}
+
+/* Order Form */
+.order-form {
+  background: #00bf8f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.order-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff2e63;
+}
+.order-form input, .order-form select, .order-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.order-form button {
+  background: #00bf8f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #80b1a5, #0ae6af);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #012e23, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.order-form button:hover {
+  background: #08d9d6;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+
+  color: white;
+  padding: 40px 30px;
+  text-align: center;
+}
+footer a {
+  color: #08d9d6;
+  margin: 0 10px;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Animations */
+@media (max-width:768px){
+  header { flex-direction: column; text-align: center;}
+  nav { flex-direction: column; gap: 10px;}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🍬 SweetShop</h1>
+  <p>The world's  Largest sweetest bakery & confectionery</p>
+</header>
+
+<nav>
+  <a href="#sweets">Sweets</a>
+  <a href="#cakes">Cakes</a>
+  <a href="#bakery">Bakery</a>
+  <a href="#order">Order Now</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">Welcome to SweetShop!</div>
+
+<section class="products" id="sweets">
+  <h2>Our Sweets</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="rasgulla.jpg" alt="Rasgulla">
+      <div class="product-info">
+        <h3>Rasgulla</h3>
+        <p>Price: ₹320/kg</p>
+        <button onclick="order('Rasgulla')">Order Now</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="laddu.jpg" alt="Laddu">
+      <div class="product-info">
+        <h3>Laddu</h3>
+        <p>Price: ₹350/kg</p>
+        <button onclick="order('Laddu')">Order Now</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="brfii.jpg" alt="Barfi">
+      <div class="product-info">
+        <h3>Barfi</h3>
+        <p>Price: ₹200/kg</p>
+        <button onclick="order('Barfi')">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="cakes">
+  <h2>Cakes</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="choco.png" alt="Chocolate Cake">
+      <div class="product-info">
+        <h3>Chocolate Cake</h3>
+        <p>Price: ₹700</p>
+        <button onclick="order('Chocolate Cake')">Order Now</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="vanilla-cake.png" alt="Vanilla Cake">
+      <div class="product-info">
+        <h3>Vanilla Cake</h3>
+        <p>Price: ₹650</p>
+        <button onclick="order('Vanilla Cake')">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="bakery">
+  <h2>Bakery Items</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="c.jpg" alt="Croissant">
+      <div class="product-info">
+        <h3>Croissant</h3>
+        <p>Price: ₹120</p>
+        <button onclick="order('Croissant')">Order Now</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="bread.png" alt="Bread">
+      <div class="product-info">
+        <h3>Bread</h3>
+        <p>Price: ₹50</p>
+        <button onclick="order('Bread')">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order-form" id="order">
+  <h2>Place Your Order</h2>
+  <input type="text" placeholder="Your Name" id="buyerName">
+  <input type="text" placeholder="Mobile Number" id="buyerMobile">
+  <select id="selectedItem">
+    <option value="">Select Item</option>
+    <option value="Rasgulla">Rasgulla</option>
+    <option value="Laddu">Laddu</option>
+    <option value="Barfi">Barfi</option>
+    <option value="Chocolate Cake">Chocolate Cake</option>
+    <option value="Vanilla Cake">Vanilla Cake</option>
+    <option value="Croissant">Croissant</option>
+    <option value="Bread">Bread</option>
+  </select>
+  <input type="number" placeholder="Quantity" id="itemQty">
+  <textarea placeholder="Delivery Address" id="buyerAddress"></textarea>
+  <button onclick="submitOrder()">Order via WhatsApp</button>
+</section>
+
+<footer id="contact">
+  <p>📞 Contact: +91 9996172934 | ✉ Email: sweetshop@gmail.com</p>
+  <p>Developed by Gobinda Rawat</p>
+</footer>
+
+<script>
+function order(item){
+  document.getElementById('selectedItem').value = item;
+  window.scrollTo({ top: document.getElementById('order').offsetTop, behavior: 'smooth' });
+}
+
+function submitOrder(){
+  const name = document.getElementById('buyerName').value;
+  const mobile = document.getElementById('buyerMobile').value;
+  const item = document.getElementById('selectedItem').value;
+  const qty = document.getElementById('itemQty').value;
+  const address = document.getElementById('buyerAddress').value;
+
+  if(!name || !mobile || !item || !qty || !address){
+    alert("Please fill all fields!");
+    return;
+  }
+
+  const msg = `Hello! I want to order ${qty} ${item}(s). \nName: ${name}\nMobile: ${mobile}\nAddress: ${address}`;
+  const url = `https://wa.me/919996172934?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
